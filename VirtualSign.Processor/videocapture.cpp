@@ -5,51 +5,40 @@
 #include <iostream>
 #include <stdio.h>
 
-// using namespace cv;
 using namespace std;
+
 
 int main(int, char**)
 {
     cv::Mat frame;
-    cv::Mat grayFrame;
-    //--- INITIALIZE VIDEOCAPTURE
+    cv::Mat hsvFrame;
+    cv::Mat threshFrame;
     cv::VideoCapture cap;
-    // open the default camera using default API
-    // cap.open(0);
-    // OR advance usage: select any API backend
-    int deviceID = 0;             // 0 = open default camera
-    int apiID = cv::CAP_ANY;      // 0 = autodetect default API
-    // open selected camera using selected API
+    
+    int deviceID = 0;
+    int apiID = cv::CAP_ANY;
+    
     cap.open(deviceID, apiID);
-    // check if we succeeded
+    
     if (!cap.isOpened()) {
         cerr << "ERROR! Unable to open camera\n";
         return -1;
     }
-    //--- GRAB AND WRITE LOOP
+    
     cout << "Start grabbing" << endl
         << "Press any key to terminate" << endl;
-    for (;;)
+    while (true)
     {
-        // wait for a new frame from camera and store it into 'frame'
         cap.read(frame);
-        cout << frame.rows << frame.cols << frame.u << endl;
-        
-        // Convert to grayscale
-        cv::cvtColor(frame, grayFrame, cv::COLOR_BGR2GRAY);
-        
-        cout << grayFrame.rows << " " << grayFrame.cols << " " << grayFrame.dims << endl;
-        
-        // check if we succeeded
+        cv::cvtColor(frame, hsvFrame, cv::COLOR_BGR2HSV);
+        cv::inRange(hsvFrame, cv::Scalar(10, 10, 100), cv::Scalar(20, 20, 150), threshFrame);
         if (frame.empty()) {
             cerr << "ERROR! blank frame grabbed\n";
             break;
         }
-        // show live and wait for a key with timeout long enough to show images
-        imshow("Live", grayFrame);
+        imshow("Live", threshFrame);
         if (cv::waitKey(5) >= 0)
             break;
     }
-    // the camera will be deinitialized automatically in VideoCapture destructor
     return 0;
 }

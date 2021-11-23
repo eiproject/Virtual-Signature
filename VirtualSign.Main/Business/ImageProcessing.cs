@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VirtualSign.Business
+namespace VirtualSign.Main.Business
 {
   class ImageProcessing
   {

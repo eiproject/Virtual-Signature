@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSign", "VirtualSign.Main\VirtualSign.csproj", "{249B16D4-04EF-4902-9B61-CCF3F1D41BAB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualSign.Main", "VirtualSign.Main\VirtualSign.Main.csproj", "{249B16D4-04EF-4902-9B61-CCF3F1D41BAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

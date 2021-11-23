@@ -4,9 +4,9 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
-using VirtualSign.Business;
+using VirtualSign.Main.Business;
 
-namespace VirtualSign.DAL
+namespace VirtualSign.Main.DAL
 {
   class Camera
   {

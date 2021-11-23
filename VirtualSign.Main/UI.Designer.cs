@@ -1,5 +1,5 @@
 ﻿
-namespace VirtualSign
+namespace VirtualSign.Main
 {
   partial class UI
   {

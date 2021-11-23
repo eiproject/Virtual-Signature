@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
-using VirtualSign.DAL;
+using VirtualSign.Main.DAL;
 
-namespace VirtualSign
+namespace VirtualSign.Main
 {
   public partial class UI : Form
   {

@@ -1,0 +1,4 @@
+.vscode
+vcpkg
+bin
+opencv-config-with-vscode
